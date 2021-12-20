@@ -1,25 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import Comp1 from './components/examples/comp1.js'
+import Comp2 from './components/examples/comp2.js'
+import Comp3 from './components/examples/comp3.js'
+import Counter from './components/counter/counter.jsx'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <div>
+        <Counter />
+      </div>
+    )
+  }
+
 }
+
+class Test extends Component {
+  render () {
+    return (
+      <div className="App">
+        Hello World :)
+        <Comp1 />
+        <Comp2 />
+        <Comp3 />
+      </div>
+      
+    ); 
+  }
+}
+
+
 
 export default App;
