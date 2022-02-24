@@ -4,13 +4,14 @@ import { Component } from 'react';
 import Comp1 from './components/examples/comp1.js'
 import Comp2 from './components/examples/comp2.js'
 import Comp3 from './components/examples/comp3.js'
-import Counter from './components/counter/counter.jsx'
+import TodoApp from './components/todo/TodoApp.jsx'
 
 class App extends Component {
   render () {
     return (
       <div>
-        <Counter />
+        {/* <Counter /> */}
+        <TodoApp />
       </div>
     )
   }
