@@ -1,0 +1,33 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "dev"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - cd my-app
+      - pwd
+      - npm install
+      - npm install @babel/eslint-parser -S
+      - npm i @babel/core -S
+      - ls -lrth
+      # - npm run lint
+  pre_build:
+    commands:
+      - pwd
+      - ls -lrth
+      - npm run build
+  
+  build:
+    commands:
+      - aws s3 sync build/ s3:reactapp-gpabby
+
+artifacts:
+  files:
+    - "*/"
+  name: "web-dist-test-s3"
+  base-directory: build
